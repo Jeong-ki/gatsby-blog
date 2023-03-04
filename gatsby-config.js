@@ -15,14 +15,21 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-typescript',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        isTSX: true,
+        allExtensions: true,
       },
     },
+    `gatsby-plugin-image`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -40,4 +47,4 @@ module.exports = {
       },
     },
   ],
-}
+};
