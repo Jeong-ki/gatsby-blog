@@ -16,7 +16,9 @@ const defaultStyle = css`
   #___gatsby {
     height: 100%;
   }
-
+  #gatsby-focus-wrapper {
+    height: 100%;
+  }
   a,
   a:hover {
     color: inherit;
