@@ -32,9 +32,9 @@ const Header: FunctionComponent = function () {
     <WrapHeader>
       <WrapLogo to="/">
         <LogoImage />
-        <Title>DogLog</Title>
+        <Title>DevDog</Title>
       </WrapLogo>
-      <Menu>포스트 소개 검색</Menu>
+      <Menu>Post About 검색</Menu>
     </WrapHeader>
   );
 };
