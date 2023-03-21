@@ -4,6 +4,7 @@ import GlobalStyle from 'components/Common/GlobalStyle';
 import Header from 'components/Common/Header';
 import Footer from 'components/Common/Footer';
 import CategoryList from 'components/Main/CategoryList';
+import PostList from 'components/Main/PostList';
 
 const CATEGORY_LSIT = {
   All: 5,
@@ -30,6 +31,7 @@ const IndexPage: FunctionComponent = function () {
       <GlobalStyle />
       <Header />
       <CategoryList selectedCategory="Web" categoryList={CATEGORY_LSIT} />
+      <PostList />
       <Footer />
     </Container>
   );

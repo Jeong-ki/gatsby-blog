@@ -6,11 +6,14 @@ const FooterWrapper = styled.div`
   display: grid;
   place-items: center;
   margin-top: auto;
-  padding: 20px 0;
-  font-size: 13px;
+  padding: 50px 0;
+  font-size: 15px;
   text-align: center;
   line-height: 1.5;
-  border-top: 1px solid #eaecef;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 const MyInfo = styled.p`
   color: #848484;
