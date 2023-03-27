@@ -2,6 +2,11 @@ import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import LogoImage from 'components/Common/LogoImage';
 import { Link } from 'gatsby';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+
+type IntroductionProps = {
+  profileImage: IGatsbyImageData;
+};
 
 const WrapHeader = styled.header`
   width: 100%;
@@ -27,11 +32,13 @@ const Menu = styled.div`
   align-items: center;
 `;
 
-const Header: FunctionComponent = function () {
+const Header: FunctionComponent<IntroductionProps> = function ({
+  profileImage,
+}) {
   return (
     <WrapHeader>
       <WrapLogo to="/">
-        <LogoImage />
+        <LogoImage profileImage={profileImage} />
         <Title>DevDog</Title>
       </WrapLogo>
       <Menu>Post About 검색</Menu>

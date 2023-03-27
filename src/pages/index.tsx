@@ -2,16 +2,22 @@ import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
 import { graphql } from 'gatsby';
-import { PostListItemType } from 'types/PostItem.types';
 import Header from 'components/Common/Header';
 import Footer from 'components/Common/Footer';
 import CategoryList from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';
+import { PostListItemType } from 'types/PostItem.types';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 type IndexPageProps = {
   data: {
     allMarkdownRemark: {
       edges: PostListItemType[];
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
     };
   };
 };
@@ -31,12 +37,15 @@ const Container = styled.div`
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   data: {
     allMarkdownRemark: { edges },
+    file: {
+      childImageSharp: { gatsbyImageData },
+    },
   },
 }) {
   return (
     <Container>
       <GlobalStyle />
-      <Header />
+      <Header profileImage={gatsbyImageData} />
       <CategoryList selectedCategory="Web" categoryList={CATEGORY_LSIT} />
       <PostList posts={edges} />
       <Footer />
@@ -60,10 +69,17 @@ export const getPostList = graphql`
             date(formatString: "YYYY.MM.DD.")
             categories
             thumbnail {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(width: 768, height: 400)
+              }
             }
           }
         }
+      }
+    }
+    file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 45, height: 45)
       }
     }
   }
