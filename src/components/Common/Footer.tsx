@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 
 const FooterWrapper = styled.div`
   display: grid;
@@ -26,7 +25,7 @@ const Footer: FunctionComponent = function () {
       Copyright © 2023 Developer Jeong-Ki
       <MyInfo>
         gisuu9@gmail.com . +82-10-2926-3532 .{' '}
-        <Link to="https://github.com/Jeong-ki">Github</Link>
+        <a href="https://github.com/Jeong-ki">Jeong-ki's Github</a>
       </MyInfo>
     </FooterWrapper>
   );
