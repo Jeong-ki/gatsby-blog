@@ -49,7 +49,7 @@ const PostList: FunctionComponent<PostListProps> = function ({
             ? categories.includes(selectedCategory)
             : true,
       ),
-    [selectedCategory],
+    [posts, selectedCategory],
   );
 
   return (
