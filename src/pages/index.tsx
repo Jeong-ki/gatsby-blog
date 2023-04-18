@@ -1,15 +1,12 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
-import styled from '@emotion/styled';
-import GlobalStyle from 'components/Common/GlobalStyle';
 import { graphql } from 'gatsby';
-import Header from 'components/Common/Header';
-import Footer from 'components/Common/Footer';
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import Pagination from 'components/Main/Pagination';
+import Template from 'components/Common/Template';
 
 type IndexPageProps = {
   location: {
@@ -26,12 +23,6 @@ type IndexPageProps = {
     };
   };
 };
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
@@ -105,9 +96,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   }, [edges, currentPage, limit, setViewList]);
 
   return (
-    <Container>
-      <GlobalStyle />
-      <Header profileImage={gatsbyImageData} />
+    <Template gatsbyImageData={gatsbyImageData}>
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
@@ -120,8 +109,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      <Footer />
-    </Container>
+    </Template>
   );
 };
 

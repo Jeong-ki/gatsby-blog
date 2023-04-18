@@ -57,6 +57,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               }
             }
           }
+          file(name: { eq: "profile-image" }) {
+            childImageSharp {
+              gatsbyImageData(width: 45, height: 45)
+            }
+          }
         }
       }
     `,
