@@ -55,7 +55,7 @@ const Category = styled.div`
 const CategoryItem = styled.div`
   margin: 2.5px 5px;
   padding: 3px 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   background: black;
   font-size: 14px;
   font-weight: 700;

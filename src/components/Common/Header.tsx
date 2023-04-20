@@ -22,10 +22,10 @@ const WrapLogo = styled(Link)`
   font-weight: 500;
   align-items: center;
 `;
-const Title = styled.div`
+const Title = styled.h1`
   margin-left: 8px;
   font-size: 21px;
-  font-weight: 400;
+  font-weight: 300;
 `;
 const Menu = styled.div`
   display: flex;
