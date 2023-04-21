@@ -56,6 +56,10 @@ const Title = styled.h2`
   font-size: 2.5rem;
   line-height: 1.5;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 const CategoryWrapper = styled.div`
@@ -111,6 +115,11 @@ const Category = styled.span`
   font-size: 1rem;
   margin-right: 5px;
   margin: 15px 5px 15px 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
 `;
 
 const Date = styled.span`
@@ -118,6 +127,10 @@ const Date = styled.span`
   font-size: 0.875rem;
   line-height: 1.5;
   color: #666;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
@@ -131,7 +144,7 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
         <Title>{title}</Title>
         <CategoryWrapper>
           {categories.map(item => (
-            <Category># {item}</Category>
+            <Category key={item}># {item}</Category>
           ))}
         </CategoryWrapper>
         <Date>{date}</Date>

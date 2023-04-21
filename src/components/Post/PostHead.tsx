@@ -4,6 +4,10 @@ import PostHeadInfo, { PostHeadInfoProps } from 'components/Post/PostHeadInfo';
 
 const PostHeadWrapper = styled.header`
   text-align: center;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 `;
 
 const PostHead: FunctionComponent<PostHeadInfoProps> = function ({

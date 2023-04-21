@@ -5,6 +5,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import PostContent from 'components/Post/PostContent';
 import PostHead from 'components/Post/PostHead';
 import { PostFrontmatterType } from 'types/PostItem.types';
+import CommentWidget from 'components/Post/CommentWidget';
 
 type PostTemplateProps = {
   data: {
@@ -36,21 +37,14 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   console.log(edges[0]);
 
   const {
-    node: {
-      html,
-      frontmatter: {
-        title,
-        summary, // 나중에 사용할 예정입니다!
-        date,
-        categories,
-      },
-    },
+    node: { html, frontmatter },
   } = edges[0];
 
   return (
     <Template gatsbyImageData={gatsbyImageData}>
-      <PostHead title={title} date={date} categories={categories} />
+      <PostHead {...frontmatter} />
       <PostContent html={html} />
+      <CommentWidget />
     </Template>
   );
 };
