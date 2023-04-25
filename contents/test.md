@@ -8,6 +8,18 @@ thumbnail: './test.png'
 
 ### 1. Help Google Bot to Find My Contents
 
+```javascript
+const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+// Copy to index 0 the element at index 3
+console.log(array1.copyWithin(0, 3, 4));
+// Expected output: Array ["d", "b", "c", "d", "e"]
+
+// Copy to index 1 all elements from index 3 to the end
+console.log(array1.copyWithin(1, 3));
+// Expected output: Array ["d", "d", "e", "d", "e"]
+```
+
 구글에 SiteMap을 제출하여 사이트에 있는 파일로서 새 페이지나 변경된 페이지가 있을 때 이를 검색 엔진에 알려주도록 할 수 있다.
 
 SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관계에 관한 정보를 제공하는 파일로, 검색 엔진은 이를 읽고 사이트를 더 지능적으로 크롤링 할 수 있게 된다.
