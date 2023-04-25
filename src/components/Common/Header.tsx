@@ -13,8 +13,20 @@ const WrapHeader = styled.header`
   height: 70px;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 50px;
   border-bottom: 1px solid #eaecef;
+
+  @media (max-width: 1600px) {
+    padding: 20px 50px;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 const WrapLogo = styled(Link)`
   display: flex;
