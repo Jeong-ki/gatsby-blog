@@ -111,7 +111,7 @@ const Category = styled.span`
   background: #000;
   color: #ffffff;
   border: 1px solid #000;
-  padding: 3px 10px;
+  padding: 4px 10px;
   font-size: 1rem;
   margin-right: 5px;
   margin: 15px 5px 15px 0;

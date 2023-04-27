@@ -37,11 +37,14 @@ const WrapLogo = styled(Link)`
 const Title = styled.h1`
   margin-left: 8px;
   font-size: 21px;
-  font-weight: 300;
+  font-weight: 400;
 `;
 const Menu = styled.div`
   display: flex;
   align-items: center;
+`;
+const Item = styled(Link)`
+  margin-right: 35px;
 `;
 
 const Header: FunctionComponent<IntroductionProps> = function ({
@@ -53,7 +56,10 @@ const Header: FunctionComponent<IntroductionProps> = function ({
         <LogoImage profileImage={profileImage} />
         <Title>DevDog</Title>
       </WrapLogo>
-      <Menu>Post About 검색</Menu>
+      <Menu>
+        <Item to="/">Post</Item>
+        <Item to="/about">About</Item> {/* MEMO: 소개 페이지 추가 예정 */}
+      </Menu>
     </WrapHeader>
   );
 };

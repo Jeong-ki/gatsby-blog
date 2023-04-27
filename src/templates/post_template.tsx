@@ -18,6 +18,9 @@ type PostTemplateProps = {
       };
     };
   };
+  location: {
+    href: string;
+  };
 };
 export type PostPageItemType = {
   node: {
@@ -33,16 +36,32 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       childImageSharp: { gatsbyImageData },
     },
   },
+  location: { href },
 }) {
   console.log(edges[0]);
 
   const {
-    node: { html, frontmatter },
+    node: {
+      html,
+      frontmatter: {
+        title,
+        summary,
+        date,
+        categories,
+        thumbnail: { publicURL },
+      },
+    },
   } = edges[0];
 
   return (
-    <Template gatsbyImageData={gatsbyImageData}>
-      <PostHead {...frontmatter} />
+    <Template
+      gatsbyImageData={gatsbyImageData}
+      title={title}
+      description={summary}
+      url={href}
+      image={publicURL}
+    >
+      <PostHead title={title} date={date} categories={categories} />
       <PostContent html={html} />
       <CommentWidget />
     </Template>
@@ -66,6 +85,7 @@ export const queryMarkdownDataBySlug = graphql`
               childImageSharp {
                 gatsbyImageData
               }
+              publicURL
             }
           }
         }
