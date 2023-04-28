@@ -88,5 +88,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '<https://jeong-ki.github.io/>',
+        stripQueryString: true,
+      },
+    },
   ],
 };
