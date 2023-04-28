@@ -80,6 +80,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   useEffect(() => {
+    if (window === undefined) return;
+
     function handleResize() {
       const width = window.innerWidth;
       let newValue;
