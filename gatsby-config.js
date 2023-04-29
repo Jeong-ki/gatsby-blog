@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `DevDog 개발 블로그`,
+    title: `DevDog`,
     description: `프론트엔드 개발자 DevDog의 개발 블로그입니다.`,
     author: `Jeong-Ki`,
     siteUrl: `https://jeong-ki.github.io/`,
@@ -100,6 +100,12 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/logo.png`,
       },
     },
   ],

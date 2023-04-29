@@ -3,7 +3,7 @@ date: '2023-03-30'
 title: 'Test02'
 categories: ['JS']
 summary: '자바스크립트란 무엇인가?'
-thumbnail: './test.png'
+thumbnail: './test_2.jpg'
 ---
 
 ### 1. Help Google Bot to Find My Contents

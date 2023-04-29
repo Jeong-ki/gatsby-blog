@@ -3,6 +3,16 @@ import styled from '@emotion/styled';
 import LogoImage from 'components/Common/LogoImage';
 import { Link } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { useLocation } from '@gatsbyjs/reach-router';
+import { css } from '@emotion/react';
+
+import type { SerializedStyles } from '@emotion/serialize';
+
+declare module 'react' {
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: SerializedStyles;
+  }
+}
 
 type IntroductionProps = {
   profileImage: IGatsbyImageData;
@@ -45,11 +55,21 @@ const Menu = styled.div`
 `;
 const Item = styled(Link)`
   margin-right: 35px;
+  padding-bottom: 3px;
 `;
 
 const Header: FunctionComponent<IntroductionProps> = function ({
   profileImage,
 }) {
+  const { pathname } = useLocation();
+
+  const postUnderLine = css`
+    border-bottom: 2px solid ${pathname === '/' ? '#A07577' : '#fff'};
+  `;
+  const aboutUnderLine = css`
+    border-bottom: 2px solid ${pathname === '/about/' ? '#A07577' : '#fff'};
+  `;
+
   return (
     <WrapHeader>
       <WrapLogo to="/">
@@ -57,8 +77,12 @@ const Header: FunctionComponent<IntroductionProps> = function ({
         <Title>DevDog</Title>
       </WrapLogo>
       <Menu>
-        <Item to="/">Post</Item>
-        <Item to="/about">About</Item> {/* MEMO: 소개 페이지 추가 예정 */}
+        <Item css={postUnderLine} to="/">
+          Post
+        </Item>
+        <Item css={aboutUnderLine} to="/about">
+          About
+        </Item>
       </Menu>
     </WrapHeader>
   );

@@ -54,14 +54,17 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   font-weight: ${({ active }) => (active ? '800' : '400')};
   cursor: pointer;
   border: 1px solid rgb(204, 204, 204);
+  border-color: ${({ active }) => (active ? '#A07577' : 'rgb(204, 204, 204)')};
   border-radius: 5px;
   line-height: 27px;
   background-color: ${({ active }) =>
-    active ? 'rgb(121, 121, 121)' : 'rgb(255, 255, 255)'};
+    active ? '#A07577' : 'rgb(255, 255, 255)'};
   color: ${({ active }) => (active ? 'white' : 'black')};
 
   &:hover {
-    color: ${({ active }) => (active ? 'white' : 'black')};
+    color: ${({ active }) => (active ? '#fff' : '#000')};
+    background-color: ${({ active }) => (active ? '#A07577' : '#F2E7E2')};
+    border-color: ${({ active }) => (active ? '#A07577' : '#F2E7E2')};
   }
 
   &:last-of-type {
@@ -69,7 +72,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   span {
-    color: ${({ active }) => (active ? 'white' : 'rgb(170, 170, 170)')};
+    color: ${({ active }) => (active ? '#fff' : 'rgb(121, 121, 121)')};
   }
 
   @media (max-width: 768px) {

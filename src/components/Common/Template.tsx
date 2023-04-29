@@ -15,7 +15,7 @@ type TemplateProps = {
   gatsbyImageData: IGatsbyImageData;
 };
 
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -32,6 +32,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
   return (
     <Container>
       <Helmet>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -49,6 +50,8 @@ const Template: FunctionComponent<TemplateProps> = function ({
         <meta name="twitter:image" content={image} />
         <meta name="twitter:site" content="Jeong-Ki" />
         <meta name="twitter:creator" content="Jeong-Ki" />
+
+        <html lang="ko" />
       </Helmet>
       <GlobalStyle />
       <Header profileImage={gatsbyImageData} />

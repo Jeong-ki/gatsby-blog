@@ -52,14 +52,17 @@ const Category = styled.div`
   margin-top: 10px;
   margin: 10px -5px;
 `;
-const CategoryItem = styled.div`
+const CategoryItem = styled(Link)`
   margin: 2.5px 5px;
-  padding: 3px 5px;
+  padding: 4px 6px;
   border-radius: 5px;
-  background: black;
+  border: 1px solid rgb(204, 204, 204);
   font-size: 14px;
   font-weight: 700;
-  color: white;
+  &:hover {
+    background-color: #f2e7e2;
+    border-color: #f2e7e2;
+  }
 `;
 const Summary = styled.div`
   display: -webkit-box;
@@ -95,7 +98,9 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
         <Date>{date}</Date>
         <Category>
           {categories.map(category => (
-            <CategoryItem key={category}>{category}</CategoryItem>
+            <CategoryItem to={`/?category=${category}`} key={category}>
+              #{category}
+            </CategoryItem>
           ))}
         </Category>
         <Summary>{summary}</Summary>

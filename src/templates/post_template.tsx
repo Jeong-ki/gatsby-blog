@@ -38,8 +38,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   },
   location: { href },
 }) {
-  console.log(edges[0]);
-
   const {
     node: {
       html,
