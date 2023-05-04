@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import React, { createRef, FunctionComponent, useEffect } from 'react';
+import { useLocation } from '@gatsbyjs/reach-router';
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'Jeong-Ki/Jeong-Ki.github.io'; // 자신 계정의 레포지토리로 설정
+const repo = 'Jeong-Ki/Jeong-Ki.github.io';
 
 type UtterancesAttributesType = {
   src: string;
@@ -20,6 +21,7 @@ const UtterancesWrapper = styled.div`
 
 const CommentWidget: FunctionComponent = function () {
   const element = createRef<HTMLDivElement>();
+  const location = useLocation();
 
   useEffect(() => {
     if (element.current === null) return;
@@ -29,7 +31,7 @@ const CommentWidget: FunctionComponent = function () {
     const attributes: UtterancesAttributesType = {
       src,
       repo,
-      'issue-term': 'pathname',
+      'issue-term': location.pathname,
       label: 'Comment',
       theme: `github-light`,
       crossorigin: 'anonymous',
@@ -41,7 +43,7 @@ const CommentWidget: FunctionComponent = function () {
     });
 
     element.current.appendChild(utterances);
-  }, []);
+  }, [location.pathname]);
 
   return <UtterancesWrapper ref={element} />;
 };
