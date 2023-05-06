@@ -25,6 +25,15 @@ const defaultStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
+  .img_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .md_img {
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 const GlobalStyle: FunctionComponent = function () {

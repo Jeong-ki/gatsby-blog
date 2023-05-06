@@ -65,7 +65,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
             },
           }: PostListItemType,
         ) => {
-          categories.forEach(category => {
+          categories?.forEach(category => {
             if (list[category] === undefined) list[category] = 1;
             else list[category]++;
           });
