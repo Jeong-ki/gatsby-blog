@@ -1,13 +1,25 @@
 import React, { FunctionComponent } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import styled from '@emotion/styled';
 
-const LogoImage: FunctionComponent = function () {
+type ProfileImageProps = {
+  profileImage: IGatsbyImageData;
+};
+
+const ProfileImageWrapper = styled(GatsbyImage)`
+  width: 45px;
+  height: 45px;
+  /* margin-bottom: 30px;
+  border-radius: 50%; */
+`;
+
+const LogoImage: FunctionComponent<ProfileImageProps> = function ({
+  profileImage,
+}) {
   return (
-    <StaticImage
-      src="../../images/logo.jpeg"
-      alt="logo image"
-      width={45}
-      height={45}
+    <ProfileImageWrapper
+      image={profileImage}
+      alt="Logo Image"
       // style={{ borderRadius: '50%', border: '1px solid black' }}
     />
   );

@@ -22,21 +22,61 @@ export type CategoryListProps = {
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 768px;
-  margin: 100px auto 0;
+  width: 1200px;
+  margin: 60px auto 0;
+
+  @media (max-width: 1600px) {
+    width: 900px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 768px;
+    margin: 50px auto 0;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
-))`
-  margin-right: 20px;
-  padding: 5px 0;
+))<CategoryItemProps>`
+  margin-right: 10px;
+  padding: 0px 10px;
+  font-size: 14px;
   font-weight: ${({ active }) => (active ? '800' : '400')};
-  font-size: 16px;
   cursor: pointer;
+  border: 1px solid rgb(204, 204, 204);
+  border-color: ${({ active }) => (active ? '#A07577' : 'rgb(204, 204, 204)')};
+  border-radius: 5px;
+  line-height: 27px;
+  background-color: ${({ active }) =>
+    active ? '#A07577' : 'rgb(255, 255, 255)'};
+  color: ${({ active }) => (active ? 'white' : 'black')};
+
+  &:hover {
+    color: ${({ active }) => (active ? '#fff' : '#000')};
+    background-color: ${({ active }) => (active ? '#A07577' : '#F2E7E2')};
+    border-color: ${({ active }) => (active ? '#A07577' : '#F2E7E2')};
+  }
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  span {
+    color: ${({ active }) => (active ? '#fff' : 'rgb(121, 121, 121)')};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -52,7 +92,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           active={name === selectedCategory}
           key={name}
         >
-          #{name}({count})&nbsp;&nbsp;
+          #{name} <span>{count}</span>
         </CategoryItem>
       ))}
     </CategoryListWrapper>
