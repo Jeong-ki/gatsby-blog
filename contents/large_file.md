@@ -30,7 +30,7 @@ thumbnail: './large_file.jpeg'
 ## 예시 코드 작성
 
 이제 파일을 분할 업로드하는 코드를 한번 작성해보겠습니다. <br />
-우선 파일을 분할하는 함수를 작성하겠습니다. 이 함수는 전달받은 파일을 지정된 크기로 잘라서 Blob 배열로 반환합니다.
+우선, 파일을 분할하는 함수를 작성하겠습니다. 이 함수는 전달받은 파일을 지정된 크기로 잘라서 Blob 배열로 반환합니다.
 
 ```javascript
 function sliceFile(file, sliceSize) {
@@ -48,7 +48,7 @@ function sliceFile(file, sliceSize) {
 }
 ```
 
-다음으로 Blob 배열을 받아서 병렬로 업로드하는 함수를 만들어 줍니다. <br />
+다음으로, Blob 배열을 받아서 병렬로 업로드하는 함수를 만들어 줍니다. <br />
 이 함수는 각각의 Blob을 병렬로 업로드하고 모든 업로드가 완료되면 업로드된 파일의 URL 배열을 반환합니다.
 
 ```javascript
