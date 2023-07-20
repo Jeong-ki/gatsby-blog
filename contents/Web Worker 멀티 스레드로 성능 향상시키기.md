@@ -194,7 +194,7 @@ Web Worker 스레드에게 이벤트를 보내고 처리된 값을 받아와서 
 
 `new Worker()` 로 워커 인스턴스를 생성하고 컴포넌트가 마운트될 때 메시지를 수신하는 핸들러를 만들고 언마운트 시 웹 워커를 제거하도록 `useEffect` 내부에서 작업을 해두었습니다.
 
-마지막으로 버튼을 눌렀을 때 워커에게 계산을 수행할 값과 함께 메시지를 보내기 위한 이벤트 핸들러 함수를 만들었습니다. 만든 컴포넌트는 [https://jeong-ki.github.io/webworker](https://jeong-ki.github.io/webworker) 에서 테스트해볼 수 있습니다.
+마지막으로 버튼을 눌렀을 때 워커에게 계산을 수행할 값과 함께 메시지를 보내기 위한 이벤트 핸들러 함수를 만들었습니다. 만든 컴포넌트는 [jeong-ki.github.io/webworker](https://jeong-ki.github.io/webworker) 에서 테스트해볼 수 있습니다. ([코드보기](https://github.com/Jeong-ki/Jeong-ki.github.io/tree/develop/src/components/WebWorker))
 
 > 만약 싱글 코어 컴퓨터인 경우 Web Worker를 사용한다 해도 거의 의미가 없어집니다. 이를 최적으로 사용하기 위해서는 CPU의 코어 수 만큼 Web Worker를 만들어서 사용하는 것이 가장 좋습니다.
 > 
