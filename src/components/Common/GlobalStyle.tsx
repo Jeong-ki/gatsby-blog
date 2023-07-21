@@ -28,11 +28,16 @@ const defaultStyle = css`
   .img_wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
   .md_img {
     width: 300px;
     height: 300px;
+  }
+  .loop_img {
+    width: 500px;
+    margin: 20px 0;
   }
 `;
 

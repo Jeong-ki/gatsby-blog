@@ -5,28 +5,19 @@ categories: ['JavaScript', 'Web API', 'Web Worker']
 summary: 'Web API인 Web Worker를 사용해서 멀티 스레드를 구현하고 성능을 개선해보자.'
 thumbnail: './web_worker.jpeg'
 ---
-
-![Thumbnail image](./web_worker.jpeg)
-
-<div class="img_wrapper">
-  <p class="md_img">
-    <img src="web_worker.jpeg">
-  </p>
-</div>
-
-# Web Worker 멀티 스레드로 성능 향상시키기
+# Web Worker (Web APIs)
 
 Web Worker는 브라우저의 메인 스레드와는 별개로 동작하며 백그라운드 스레드에서 실행되기 때문에 유저 인터페이스를 방해하지 않고 작업을 수행할 수 있습니다.
 
 자바스크립트는 싱글 스레드로 동작하기 때문에 한 번에 하나의 작업만 수행이 가능합니다. 비동기 작업을 통해 자연스럽게 화면 동작이 가능하지만 비동기는 작업의 우선 순위를 뒤로 미루는 것이지 병렬로 실행되는 것이 아닙니다. 브라우저의 이벤트 루프 동작을 이해하시면 이를 알 수 있습니다.
 
 <div class="img_wrapper">
-  <p class="md_img">
+  <p class="loop_img">
     <img src="event_loop.png">
   </p>
 </div>
 
-![Event Loop](./event_loop.png)
+<!-- ![Event Loop](./event_loop.png) -->
 
 우리가 직접 작성한 코드는 모두 메인 스레드에서 처리됩니다. 파일 시스템이나 Network 통신과 같은 Web API의 일부 함수는 멀티 스레드로 처리가 되는 것도 있지만 그 외의 로직은 비동기라 하더라도 시간이 오래 소요되게 됩니다. 그렇기 때문에 데이터 처리가 많아질수록 병목현상이 생겨 UI 업데이트가 지연되고 사용자에게 느리게 느껴지게 됩니다. 이를 해결하기 위해 브라우저에서 Web Worker API를 제공하고 있습니다.
 
@@ -194,7 +185,7 @@ Web Worker 스레드에게 이벤트를 보내고 처리된 값을 받아와서 
 
 `new Worker()` 로 워커 인스턴스를 생성하고 컴포넌트가 마운트될 때 메시지를 수신하는 핸들러를 만들고 언마운트 시 웹 워커를 제거하도록 `useEffect` 내부에서 작업을 해두었습니다.
 
-마지막으로 버튼을 눌렀을 때 워커에게 계산을 수행할 값과 함께 메시지를 보내기 위한 이벤트 핸들러 함수를 만들었습니다. 만든 컴포넌트는 [jeong-ki.github.io/webworker](https://jeong-ki.github.io/webworker) 에서 테스트해볼 수 있습니다. ([코드보기](https://github.com/Jeong-ki/Jeong-ki.github.io/tree/develop/src/components/WebWorker))
+마지막으로 버튼을 눌렀을 때 워커에게 계산을 수행할 값과 함께 메시지를 보내기 위한 이벤트 핸들러 함수를 만들었습니다.
 
 > 만약 싱글 코어 컴퓨터인 경우 Web Worker를 사용한다 해도 거의 의미가 없어집니다. 이를 최적으로 사용하기 위해서는 CPU의 코어 수 만큼 Web Worker를 만들어서 사용하는 것이 가장 좋습니다.
 > 

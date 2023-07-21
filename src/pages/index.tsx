@@ -7,7 +7,6 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
 import Pagination from 'components/Main/Pagination';
 import Template from 'components/Common/Template';
-import WorkerComponent from 'components/WebWorker/WorkerComponent';
 
 type IndexPageProps = {
   location: {
@@ -118,7 +117,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       url={siteUrl}
       image={publicURL}
     >
-      <WorkerComponent />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
