@@ -1,7 +1,7 @@
 ---
 date: '2023-07-21'
 title: 'Web Worker 멀티 스레드로 성능 개선하기'
-categories: ['JavaScript', 'Web API', 'Web Worker']
+categories: ['JavaScript', 'WebAPI', 'WebWorker']
 summary: 'Web API인 Web Worker를 사용해서 멀티 스레드를 구현하고 성능을 개선해보자.'
 thumbnail: './web_worker.jpeg'
 ---
@@ -21,7 +21,7 @@ Web Worker는 브라우저의 메인 스레드와는 별개로 동작하며 백�
 
 우리가 직접 작성한 코드는 모두 메인 스레드에서 처리됩니다. 파일 시스템이나 Network 통신과 같은 Web API의 일부 함수는 멀티 스레드로 처리가 되는 것도 있지만 그 외의 로직은 비동기라 하더라도 시간이 오래 소요되게 됩니다. 그렇기 때문에 데이터 처리가 많아질수록 병목현상이 생겨 UI 업데이트가 지연되고 사용자에게 느리게 느껴지게 됩니다. 이를 해결하기 위해 브라우저에서 Web Worker API를 제공하고 있습니다.
 
-# Web Worker 사용방법
+# Web Worker 사용방법 
 
 Web Worker는 필요한 개수만큼 생성할 수 있고 스레드를 만들어 사용하는 것과 같습니다. 메인 스레드와 Web Worker는 메시지 방식으로 서로 통신하며 데이터를 주고받습니다.
 

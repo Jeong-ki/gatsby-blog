@@ -25,6 +25,9 @@ const defaultStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
+  .gatsby-highlight {
+    width: 100%;
+  }
   .img_wrapper {
     display: flex;
     justify-content: center;
