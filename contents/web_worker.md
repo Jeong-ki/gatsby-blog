@@ -1,7 +1,7 @@
 ---
 date: '2023-07-21'
 title: 'Web Worker 멀티 스레드로 성능 개선하기'
-categories: ['JavaScript', 'WebAPI', 'WebWorker']
+categories: ['JS', 'WebAPI', 'WebWorker']
 summary: 'Web API인 Web Worker를 사용해서 멀티 스레드를 구현하고 성능을 개선해보자.'
 thumbnail: './web_worker.jpeg'
 ---
