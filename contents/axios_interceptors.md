@@ -1,8 +1,8 @@
 ---
 date: '2023-08-03'
 title: 'Axios Interceptors를 활용한 토큰, 리프레시 토큰 처리'
-categories: ['Axios', 'Interceptors', 'Auth']
-summary: 'Axios Interceptors로 API 요청과 응답을 가로채서 효율적으로 관리해보자!'
+categories: ['Axios', 'Interceptors']
+summary: 'Axios Interceptors로 API 요청과 응답을 가로채서 효율적으로 관리해보자.'
 thumbnail: './axios.jpeg'
 ---
 

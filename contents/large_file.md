@@ -1,8 +1,8 @@
 ---
 date: '2023-05-06'
 title: 'Blob의 Slice 메소드를 사용한 대용량 파일 분할 업로드'
-categories: ['JS', 'Blob']
-summary: '프론트에서 대용량 파일을 업로드할 때 Blob 메소드를 사용하여 파일을 분할 업로드하는 방법'
+categories: ['JS', 'Blob', 'File']
+summary: '프론트에서 대용량 파일을 업로드할 때 Blob 메소드를 사용하여 파일을 분할 업로드하는 방법.'
 thumbnail: './large_file.jpeg'
 ---
 

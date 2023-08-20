@@ -2,7 +2,7 @@
 date: '2023-08-20'
 title: 'Next.js에서 Middleware로 페이지 접근 제어 구현하기'
 categories: ['Nextjs', 'Middleware', 'Routing']
-summary: 'Next.js Middleware로 Private Route, Router Guard와 같은 페이지 접근 제어를 구현하자'
+summary: 'Next.js Middleware로 Private Route, Router Guard와 같은 페이지 접근 제어를 구현하자.'
 thumbnail: './nextjs_middleware.png'
 ---
 
