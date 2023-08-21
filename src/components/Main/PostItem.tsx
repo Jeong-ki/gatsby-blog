@@ -57,7 +57,7 @@ const CategoryItem = styled(Link)`
   padding: 4px 6px;
   border-radius: 5px;
   border: 1px solid rgb(204, 204, 204);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   &:hover {
     background-color: #f2e7e2;
